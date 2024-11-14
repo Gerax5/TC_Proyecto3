@@ -21,23 +21,40 @@ class MT:
         self.headPosition = 0
 
     def moveTape(self):
+
+        # Se retorna true o false dependiendo si falla o no la maquina, por eso esta el
+        # self.error porque asi se puede desplegar que paso
+        
+        # Si el primer movimiento es a la izquierda, entonces hay un error
         if self.headPosition < 0:
             self.error = "Error: Head position is less than 0"
             return False
         
+        # Si el cabezal esta fuera de la cinta, entonces se agrega un espacio en blanco
         if self.headPosition >= len(self.tape):
             self.tape.append("B")
         
+        # Se obtiene el simbolo de la cinta en la posicion actual del cabezal
         currentTapeSymbol = self.tape[self.headPosition]
+
+        # Si no hay una funcion definida para el estado actual y el simbolo de la cinta, entonces hay un error
+        # function funciona por tuplas (estado, simbolo) asi que busca si existe una transicion
         if (self.currentState, currentTapeSymbol) not in self.function:
             self.error = "Error: No function defined for the current state and tape symbol"
             return False
+        # Se obtiene la siguiente configuracion de la cinta y el estado
         nextState, nextTapeSymbol, tapeDisplacement = self.function[(self.currentState, currentTapeSymbol)]
+
+        # Se actualiza el simbolo de la cinta en la posicion actual del cabezal
         self.tape[self.headPosition] = nextTapeSymbol
+
+        # Se actualiza la posicion del cabezal dependiendo de la direccion
         if tapeDisplacement == "R":
             self.headPosition += 1
         elif tapeDisplacement == "L":
             self.headPosition -= 1
+
+        # Se actualiza el estado actual
         self.currentState = nextState
         return True
         
