@@ -63,12 +63,28 @@ class MT:
         
 
     def printCurrentTape(self):
-        #Despues de move se podria llamar a esta funcion
-        pass
+        # Representa la cinta con el cabezal indicando la posición actual
+        tape_with_head = ''.join(self.tape)
+        tape_visual = (
+            tape_with_head[:self.headPosition] + 
+            "[" + tape_with_head[self.headPosition] + "]" + 
+            tape_with_head[self.headPosition + 1:]
+            if 0 <= self.headPosition < len(self.tape) 
+            else "[B]"
+        )
+        
+        # Imprime el estado actual, la cinta y la posición del cabezal
+        print(f"Estado actual: {self.currentState}")
+        print(f"Cinta: {tape_visual}")
+        print(f"Posición del cabezal: {self.headPosition}")
 
+
+    
     def simulateMT(self):
         while self.currentState != self.final_state and self.headPosition < len(self.word):
             if(self.moveTape() == False):
-                #Aqui tambien deberia de ir porque si falla debe mostrar la ultima parte que fallo
+                self.printCurrentTape()
                 break
-            #Pienso que podria ir aqui imprimir
+            self.printCurrentTape()
+
+
