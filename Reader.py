@@ -13,14 +13,14 @@ class Reader:
         self.tape_alphabet = []
         self.simulation_strings = []
         self.function = {}
-        self.read_file()
-        self.parse_data(self.data)
+        self.readFile()
+        self.parseData(self.data)
 
-    def read_file(self):
+    def readFile(self):
         with open(self.file_path, 'r') as file:
             self.data = yaml.safe_load(file)
 
-    def parse_data(self, data):
+    def parseData(self, data):
         states = data["q_states"]
 
         self.states = states["q_list"]
@@ -35,7 +35,7 @@ class Reader:
         for transition in tempFunction:
             self.function[(transition["params"]["initial_state"], transition["params"]["tape_input"])] = (transition["output"]["final_state"], transition["output"]["tape_output"], transition["output"]["tape_displacement"])
 
-    def print_data(self):
+    def printData(self):
         print(self.states)
         print(self.initial_state)
         print(self.final_state)
