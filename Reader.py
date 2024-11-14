@@ -8,7 +8,6 @@ class Reader:
         self.states = []
         self.initial_state = ""
         self.final_state = ""
-        self.reject_state = ""
 
         self.alphabet = []
         self.tape_alphabet = []
@@ -27,7 +26,6 @@ class Reader:
         self.states = states["q_list"]
         self.initial_state = states["initial"]
         self.final_state = states["final"]
-        self.reject_state = states["reject"]
 
         self.alphabet = data["alphabet"]
         self.tape_alphabet = data["tape_alphabet"]
@@ -41,7 +39,6 @@ class Reader:
         print(self.states)
         print(self.initial_state)
         print(self.final_state)
-        print(self.reject_state)
         print(self.alphabet)
         print(self.tape_alphabet)
         print(self.simulation_strings)
