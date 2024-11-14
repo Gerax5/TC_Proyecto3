@@ -14,17 +14,20 @@ class MT:
 
         self.error = ""
 
-    def initializeTape(self, simulation_string):
+    def initializeTape(self, simulation_string): 
+        # Cada vez que se quiera simular una palabra, se debe de llamar a esta funcion
+        # Para que se reinicien las configuraciones de la cinta y el cabezal
         self.word = simulation_string
         self.tape = list(simulation_string)
         self.currentState = self.initial_state
+        self.error = ""
         self.headPosition = 0
 
     def moveTape(self):
 
         # Se retorna true o false dependiendo si falla o no la maquina, por eso esta el
         # self.error porque asi se puede desplegar que paso
-        
+
         # Si el primer movimiento es a la izquierda, entonces hay un error
         if self.headPosition < 0:
             self.error = "Error: Head position is less than 0"
