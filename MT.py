@@ -1,11 +1,12 @@
 class MT:
-    def __init__(self, states, initial_state, final_state, alphabet, tape_alphabet, function):
+    def __init__(self, states, initial_state, final_state, alphabet, tape_alphabet, function, machine_type):
         self.states = states #Estados
         self.initial_state = initial_state #Estado inicial
         self.final_state = final_state #Estado final
         self.alphabet = alphabet #Alfabeto de entrada
         self.tape_alphabet = tape_alphabet #Alfabeto de la cinta
         self.function = function #Funcion de transicion
+        self.machine_type = machine_type #Si es reconocedora o transformadora.
 
         # Tape Configuration
         self.headPosition = 0 #Posicion del cabezal actual
@@ -85,9 +86,18 @@ class MT:
     def simulateMT(self):
         while True:
             self.printCurrentTape()
-            if self.currentState == self.final_state:
+            if self.currentState == self.final_state and self.machine_type == "reconocedora":
+                return True
+
+            if self.currentState == self.final_state and self.machine_type == "transformadora":
+                print(f"cinta final transformada: {''.join(self.tape)}")
                 return True
 
             if not self.moveTape():
-                return False  
+                if self.machine_type == "reconocedora":
+                    return False
+                else: 
+                    print("Error en maquina transformadora. ")
+                    return False
+                  
 

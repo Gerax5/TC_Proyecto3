@@ -13,8 +13,11 @@ class Reader:
         self.tape_alphabet = []
         self.simulation_strings = []
         self.function = {}
+        self.machine_type = ""
+        
         self.readFile()
         self.parseData(self.data)
+
 
     def readFile(self):
         with open(self.file_path, 'r') as file:
@@ -35,7 +38,10 @@ class Reader:
         for transition in tempFunction:
             self.function[(transition["params"]["initial_state"], transition["params"]["tape_input"])] = (transition["output"]["final_state"], transition["output"]["tape_output"], transition["output"]["tape_displacement"])
 
+        self.machine_type = data.get("machine_type", "reconocedora")#para leer si es reconocedora o transformadora
+
     def printData(self):
+        print(f"Tipo de maquina: {self.machine_type}")
         print(self.states)
         print(self.initial_state)
         print(self.final_state)

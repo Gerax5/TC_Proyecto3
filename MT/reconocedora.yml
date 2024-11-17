@@ -1,3 +1,4 @@
+machine_type: "reconocedora"
 q_states:
   q_list:
     - "q0"
@@ -220,3 +221,5 @@ simulation_strings:
   - "aaabbb" #Acepta con n = 3
   - "aabbb" #Hay una b de mas por lo que la rechazaria
   - "aabb" #Acepta con n = 2
+
+  
