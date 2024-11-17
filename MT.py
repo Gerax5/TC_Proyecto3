@@ -24,7 +24,7 @@ class MT:
         self.headPosition = 0
 
     def moveTape(self):
-
+    
         # Se retorna true o false dependiendo si falla o no la maquina, por eso esta el
         # self.error porque asi se puede desplegar que paso
 
@@ -79,12 +79,15 @@ class MT:
         print(f"Posición del cabezal: {self.headPosition}")
 
 
-    
+    # Se quito la condicion self.headPosition<len(self.word) porque esto paraba la simulacion por ejemplo en
+    # 001 lo que hacia es que como la longitud era 3 y la maquina escribia un simbolo blanco extra ya 
+    # no verificaba ese otro lo cual rechazaba esa cadena cuando si la tenia que aceptar.
     def simulateMT(self):
-        while self.currentState != self.final_state and self.headPosition < len(self.word):
-            if(self.moveTape() == False):
-                self.printCurrentTape()
-                break
+        while True:
             self.printCurrentTape()
+            if self.currentState == self.final_state:
+                return True
 
+            if not self.moveTape():
+                return False  
 
