@@ -8,6 +8,9 @@ La *máquina reconocedora* reconoce cadenas del tipo {𝑎^n  𝑏^n  | 𝑛 ≥
 *máquina transformadora*:  Input: DJK. Output DJKDJK
 *máquina reconocedora*: Input: aaabbb. Output: cadena aaabbb aceptada. Input: aabbb. Output: cadena aabbb rechazada.
 
+## Video de ejecucion:
+https://youtu.be/TAIwxIycN7Y 
+
 ## *Descripción General*
 
 El simulador permite:
