@@ -1,5 +1,5 @@
-machine_type: "transformadora"
-q_states:
+machine_type: "transformadora"  #El objetivo de esta sera duplicar la entrada ejemplo ingresas DJK te devolvera DJKDJK y asi con cualquiera
+q_states:                       # Siempre y cuando tu cadena sea con las letras del alfabeto.
   q_list:
     - "q0"
     - "q1"

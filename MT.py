@@ -93,7 +93,7 @@ class MT:
                 return True
 
             if self.currentState == self.final_state and self.machine_type == "transformadora":
-                print(f"cinta final transformada: {''.join(self.tape)}")
+                print(f"Cinta final transformada: {''.join([char for char in self.tape if char != 'B'])}")
                 return True
 
             if not self.moveTape():
