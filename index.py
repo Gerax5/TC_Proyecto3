@@ -1,7 +1,7 @@
 from Reader import Reader
 from MT import MT
 
-reader = Reader("MT/reconocedora.yml")
+reader = Reader("MT/transformadora.yml")
 # reader.printData()
 
 mt = MT(reader.states, reader.initial_state, reader.final_state, reader.alphabet, reader.tape_alphabet, reader.function, machine_type= reader.machine_type)
