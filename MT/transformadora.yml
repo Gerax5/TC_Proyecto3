@@ -190,7 +190,7 @@ delta:
       initial_state: "q5"  
       tape_input: "B"
     output:
-      final_state: "q6"
+      final_state: "q8"
       tape_output: "D"
       tape_displacement: L
   - params:
@@ -530,6 +530,6 @@ delta:
       tape_output: "B"
       tape_displacement: R
 simulation_strings:
-  - "DDJK"  # Entrada: DDJK, salida: DDJKDDJK
-  - "DJK"   # Entrada: ABC, salida: DJKDJK
-  - "DJ"    # Entrada: AB, salida: DJDJ
+  - "DDJJKK"  # Entrada: DDJK, salida: DDJKDDJK
+  - "DDDJK"   # Entrada: ABC, salida: DJKDJK
+  - "DJKKK"    # Entrada: AB, salida: DJDJ
