@@ -530,6 +530,6 @@ delta:
       tape_output: "B"
       tape_displacement: R
 simulation_strings:
-  - "DDJJKK"  # Entrada: DDJK, salida: DDJKDDJK
-  - "DDDJK"   # Entrada: ABC, salida: DJKDJK
-  - "DJKKK"    # Entrada: AB, salida: DJDJ
+  - "DDJJKK"  # Entrada: DDJJKK, salida: DDJJKK
+  - "DDDJK"   # Entrada: DDDJK, salida: DDDJK
+  - "DJKKK"    # Entrada: DJ, salida: DJDJ

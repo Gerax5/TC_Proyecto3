@@ -83,9 +83,7 @@ class MT:
         print(f"Posición del cabezal: {self.headPosition}")
 
 
-    # Se quito la condicion self.headPosition<len(self.word) porque esto paraba la simulacion por ejemplo en
-    # 001 lo que hacia es que como la longitud era 3 y la maquina escribia un simbolo blanco extra ya 
-    # no verificaba ese otro lo cual rechazaba esa cadena cuando si la tenia que aceptar.
+    #Simula la cadena
     def simulateMT(self):
         while True:
             self.printCurrentTape()

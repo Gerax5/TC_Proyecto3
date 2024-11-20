@@ -218,8 +218,7 @@ delta:
       tape_output: "B"
       tape_displacement: R
 simulation_strings:
-  - "aaabbb" #Acepta con n = 3
+  - "aaaabbbb" #Acepta con n = 3
   - "aabbb" #Hay una b de mas por lo que la rechazaria
-  - "aabb" #Acepta con n = 2
 
   
