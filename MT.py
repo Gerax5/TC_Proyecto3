@@ -31,8 +31,8 @@ class MT:
 
         # Si el primer movimiento es a la izquierda, entonces hay un error
         if self.headPosition < 0:
-            self.error = "Error: Head position is less than 0"
-            return False
+            self.tape.insert(0, "B")
+            self.headPosition = 0
         
         # Si el cabezal esta fuera de la cinta, entonces se agrega un espacio en blanco
         if self.headPosition >= len(self.tape):
@@ -57,6 +57,9 @@ class MT:
             self.headPosition += 1
         elif tapeDisplacement == "L":
             self.headPosition -= 1
+            if self.headPosition < 0:
+                self.tape.insert(0, "B")
+                self.headPosition = 0
 
         # Se actualiza el estado actual
         self.currentState = nextState
