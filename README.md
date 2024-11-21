@@ -5,13 +5,20 @@ La *máquina transformadora* altera el contenido de la cinta de entrada según r
 La *máquina reconocedora* reconoce cadenas del tipo {𝑎^n  𝑏^n  | 𝑛 ≥ 1} . 
 
 ## Ejemplos:
-*máquina transformadora*:  Input: DJK. Output DJKDJK
-*máquina reconocedora*: Input: aaabbb. Output: cadena aaabbb aceptada. Input: aabbb. Output: cadena aabbb rechazada.
+1. *máquina transformadora*:  Input: DJK. Output DJKDJK.
+
+2. *máquina reconocedora*: Input: aaabbb. Output: cadena aaabbb aceptada. Input: aabbb. Output: cadena aabbb rechazada.
 
 ## Video de ejecucion:
 https://youtu.be/TAIwxIycN7Y 
 
 ## *Descripción General*
+Diagrama de control de estados para la *máquina reconocedora*: 
+![*máquina reconocedora*](diagramas/reconocedora.png).
+
+Diagrama de control de estados para la *máquina transformadora*: 
+![*máquina transformadora*](diagramas/transformadora.png).
+
 
 El simulador permite:
 1. Leer la configuración de una máquina desde un archivo YAML.
